@@ -1,0 +1,418 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, sans-serif;
+    background: #1e1e30!important
+}
+*{
+    font-family: "archia";
+}
+
+:root{
+    --themecolour:#4c75f2;
+    --myprimary:rgb(146, 0, 204);
+    --mysecondary:greenyellow;
+    --myalert:#ff073a;
+    --mywarning:orange;
+    --mysmoke:rgb(221, 218, 218);
+    --mygrey:rgba(202, 202, 202, 0.849);
+    --mychoclaty:rgb(228, 85, 33);
+}
+*{
+    box-sizing: border-box;
+}
+/*-------row----- */
+.row::after{
+    content: "";
+    clear: both;
+    display:table;
+}
+/* ---for mobiles--- */
+[class*="col-"]{
+    float: left;
+    padding: 15px;
+    width: 100%;
+    /* font-size:15px; */
+}
+/* ----for tablets---- */
+@media only screen and (min-width:600px)
+{
+    .col-b-1{width:25%;}
+    .col-b-2{width: 33.33%;}
+    .col-b-3{width: 40%}
+    .col-b-4{width: 50%}
+    .col-b-5{width: 60%;}
+    .col-b-6{width: 74%;} 
+    .col-b-7{width: 75%;}
+    .col-b-8{width: 100%;}
+}
+/* -------for desktops------- */
+@media only screen and (min-width:612px)
+{
+    .col-d-1{width:25%;}
+    .col-d-2{width: 33.33%;}
+    .col-d-3{width: 40%}
+    .col-d-4{width: 50%}
+    .col-d-5{width: 60%;}
+    .col-d-6{width: 74%;}
+    .col-d-7{width: 75%;}
+    .col-d-8{width: 100%;}
+    body{
+        font-size:20px;
+    }
+}
+/* ============================================== Header========================================== */
+.header {
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, .1);
+    position:fixed;
+    top: 0;
+    width: 100%;
+    float: left;
+    z-index: 900;
+    transition: top 1s;
+}
+.header a {
+    color:var(--myprimary);
+}
+.wavy-navbar img{
+    position:absolute;
+    top: 57px;
+    left:0;
+    background:transparent ;
+    transform: rotate(180deg);
+    width:100%;
+    height:20px;
+    z-index: 1000;
+    transition: top 0.5s;
+}
+
+.header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.header li a {
+    display: block;
+    padding: 10px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+}
+.header li:first-child{
+    padding-top:20px;
+}
+.header li a:hover:hover {
+    background-color:var(--mysmoke);
+    color:var(--myprimary);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.header .logo img{
+    display: block;
+    float: left;
+    width: 175px;
+    padding: 10px 5px 2px 10px;
+    margin-right: 75px;
+}
+
+
+/* menu */
+.header .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+.header .menu-icon {
+    cursor: pointer;
+    display: block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+
+.header .menu-icon .navicon {
+    background: #333;
+    display: block;
+    height: 2px;
+    position: relative;
+    /* transition: background .2s ease-out; */
+    width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+    top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+    top: -5px;
+}
+
+/* menu btn */
+.header .menu-btn {
+    display: none;
+}
+
+.header .menu-btn:checked~.menu {
+    max-height: 300px;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon {
+    background: transparent;
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:before {
+    transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked~.menu-icon .navicon:after {
+    transform: rotate(45deg);
+}
+
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+    top: 0;
+}
+
+@media (min-width:620px) {
+    .header li {
+        float: left;
+    }
+
+    .header li a {
+        padding: 10px 30px;
+    }
+    .header li:first-child{
+        padding-top: 0px;
+    }
+    .header .menu {
+        clear: none;
+        float: right;
+        max-height: none;
+    }
+
+    .header .menu-icon {
+        display: none;
+    }
+    .wavy-navbar img{
+        top: 62px;
+    }
+}
+
+/* =============================================== */
+#projTitle{
+    margin-top: 10vh;
+    text-align: center;
+}
+#projTitle h1{
+    display: inline-block;
+    font-size: 6vw;
+    text-transform: uppercase;
+    color: white;
+}
+#projTitle .india{
+    color: var(--themecolour);
+    margin-left: 10px;
+    background: #2187fc50;
+}
+#projTitle img{
+    width: 6vw;
+    vertical-align: sub;
+    filter: invert(1);
+    animation: rotate 2s infinite linear;
+}
+@keyframes rotate{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+#timestamp h3{
+    text-align: center;
+    color: darkgrey;
+    font-family: monospace;
+}
+#data-label{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 20vh 20vh;
+    width: 100%;
+    padding: 5px;
+    margin-top: 5vh;
+}
+#data-label div{
+    padding: 5px;
+    margin:3px;
+    text-align: center;
+}
+#data-label div h4{
+    margin: 0;
+}
+#data-label div h5{
+    margin:3vh 0px 0px 0px;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 18px;
+}
+#data-label div h1{
+    font-size: 20px;
+    margin-top: 4vh;
+}
+#data-label .active-case{
+    background: rgba(0,123,255,.06274509803921569);
+    color: var(--themecolour);
+}
+#data-label .active-case:hover{
+    background: rgba(51, 10, 235, 0.295);
+    border-radius: 10px;
+}
+#data-label .confirmed-case{
+    color: var(--myalert);
+}
+#data-label .confirmed-case:hover{
+    background: rgba(255, 0, 0, 0.356);
+    border-radius: 10px;
+}
+#data-label .recov-case{
+    color: var(--mysecondary);
+}
+#data-label .recov-case:hover{
+    background: rgba(153, 205, 50, 0.349);
+    border-radius: 10px;
+}
+#data-label .deceased-case{
+    color: var(--mysmoke);
+}
+#data-label .deceased-case:hover{
+    background: rgba(245, 245, 245, 0.37);
+    border-radius: 10px;
+}
+#data-label .dose-supplied{
+    color:var(--mywarning)
+}
+#data-label .dose-supplied:hover{
+    background: rgba(255, 166, 0, 0.295);
+    border-radius: 10px;
+}
+#data-label .total-vaccinated{
+    color:green;
+}
+#data-label .total-vaccinated:hover{
+    background: rgba(0, 128, 0, 0.315);
+    border-radius: 10px;
+}
+.table-container{
+    align-self: center;
+    margin-bottom: 2.5rem;
+    overflow-x: auto;
+    width: 100%;
+}
+h2.statewise-tag{
+    font-family: monospace;
+    color: darkgray;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 6vh;
+}
+table{
+    border-spacing:5px;
+    overflow-x:auto;
+    margin: auto;
+}
+table th{
+    color:honeydew;
+    background: #262738;
+    height: 60px;
+    border: 1px solid grey;
+}
+table th:hover{
+    background: rgba(128, 128, 128, 0.233);
+}
+table td{
+    border-radius: 4px;
+}
+table td:hover{
+    background: rgba(128, 128, 128, 0.233);
+}
+#data-table>tr{
+    background: #262738;
+    height: 60px;
+    color: white;
+}
+#data-table tr>td{
+    text-align: center;
+    vertical-align: middle;
+    font-family: monospace;
+    font-size: 15px;
+    margin-top: 0;
+}
+#data-table tr td>h5{
+    margin: 0;
+    font-family: monospace;
+    font-size: 15px;
+}
+#data-table tr .delta-confirmed{
+    color: var(--myalert);
+}
+#data-table tr .delta-recov{
+    color: green;
+}
+#data-table tr .delta-deceased{
+    color: var(--mywarning);
+}
+
+@media (min-width:620px) {
+    #projTitle h1{
+        font-size: 5vw;
+    } 
+    #projTitle img{
+        width: 4vw;
+    }
+    #data-label{
+        grid-template-columns:auto auto auto auto auto auto;
+        grid-template-rows: 22vh;
+    }
+    #data-label .dose-supplied h1{
+        margin-top: 10vh;
+    }
+    #data-label .total-vaccinated h1{
+        margin-top: 10vh;
+    }
+}
+
+footer{
+    margin-top: 10vh;
+}
+footer div h5{
+    text-align: center;
+    color:rgba(255, 255, 255, 0.616);
+}
+footer div a{
+    text-decoration: none;
+    color: crimson;
+}
+footer .social-icons{
+    text-align: center;
+}
+footer .social-icons a{
+    margin: 10px;
+}

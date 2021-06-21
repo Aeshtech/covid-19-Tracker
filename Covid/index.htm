@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid19 India Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/471f9934c1.js"></script>
+</head>
+
+<body>
+    <header class="header" style="box-shadow: 2px 2px 5px var(--myprimary); top: 0px;">
+        <a href="" class="logo"><img src="img/aeshtech_icon.png"></a>
+        <!-- =========Menu icon=========== -->
+        <input class="menu-btn" type="checkbox" id="menu-btn">
+        <label class="menu-icon" for="menu-btn">
+            <span class="navicon"></span>
+        </label>
+
+        <ul class="menu">
+            <li><a href="index.htm">Home</a></li>
+            <li><a href="https://aeshtech.com/Blogs/my_first_blog.html" target="_blank">Blogs</a></li>
+            <li><a href="https://aeshtech.com" target="_blank">Contact us</a></li>
+
+        </ul>
+    </header>
+    <!-- ------------------------------------------------------------------ -->
+    <div id="projTitle">
+        <h1>C</h1><img src="img/covidVirus.png" title="Virus">
+        <h1>VID-19</h1>
+        <h1 class="india">INDIA TRACKER</h1>
+    </div>
+
+    <!-- -----------Summary Data Label-------------->
+    <div id="timestamp"></div>
+    <div id="data-label"></div>
+
+    <!-- ----------Statewise--------------------- -->
+    <h2 class="statewise-tag">State wise Updated Statistics</h2>
+    <div class="table-container">
+        <Table>
+            <Tr>
+                <th>State</th>
+                <th>Active</th>
+                <th>Total Confirmed</th>
+                <th>Total Recovered</th>
+                <th>Total Deceased</th>
+            </Tr>
+            <tbody id="data-table"></tbody>
+        </Table>
+    </div>
+    <!-- ===============Footer============= -->
+    <footer>
+        <h4>Covid19India</h4>
+        <div>
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/aeshtech" target="_blank" title="linkedin"><i
+                        class="fa fa-linkedin fa-2x" aria-hidden="true" style="color:lightgrey;"></i></a>
+                <a href="https://www.github.com/aeshtech" target="_blank" title="Github"><i class="fa fa-github fa-2x"
+                        aria-hidden="true" style="color: lightgrey;"></i></a>
+                <a href="https://www.instagram.com/its_ashish_52/" target="_blank" title="instagram"><i
+                        class="fa fa-instagram fa-2x" aria-hidden="true" style="color: lightgrey;"></i></a>
+            </div>
+            <h5>Designied & Developed By Ashish Sharma at-<a href="https://aeshtech.com" target="_blank"
+                title="Aeshtech">Aeshtech</a></h5>
+        </div>
+    </footer>
+
+    <script rel="Javascript" src="app.js" type="text/javascript"></script>
+</body>
+
+</html>
